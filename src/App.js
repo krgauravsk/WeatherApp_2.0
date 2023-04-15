@@ -28,6 +28,12 @@ export default class App extends React.Component {
     });
   };
 
+  handleKeyDown = (e) => {
+    if(e.key === 'Enter') {
+      this.handleClick(e);
+    }
+  }
+
   handleClick = (e) => {
     axios
       .post(
@@ -56,7 +62,7 @@ export default class App extends React.Component {
     return (
       <div className="container">
         <h1 className="header">Weather App</h1>
-        <Form onChange={this.handleChange} onClick={this.handleClick} />
+        <Form onChange={this.handleChange} onClick={this.handleClick} onKeyDown={this.handleKeyDown}/>
         <div className="card">
           <Weather data={this.state} />
         </div>
