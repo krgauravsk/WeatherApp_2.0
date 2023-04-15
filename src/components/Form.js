@@ -12,6 +12,7 @@ const Input = (props) => (
       className="input"
       placeholder="Type your location..."
       onChange={props.onChange}
+      onKeyDown={props.onKeyDown}
       required
     />
     <button type="submit" className="btn" onClick={props.onClick}>
